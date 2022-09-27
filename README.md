@@ -1,6 +1,6 @@
 # RawObject
 
-[![info badge](https://img.shields.io/npm/dt/@hrimthurs/RawObject.svg)](http://npm-stat.com/charts.html?package=@hrimthurs/RawObject)
+[![info badge](https://img.shields.io/npm/dt/@hrimthurs/rawobject.svg)](http://npm-stat.com/charts.html?package=@hrimthurs/rawobject)
 
 Convert Object type value to/from raw Buffer
 
