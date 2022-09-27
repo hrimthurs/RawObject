@@ -1,10 +1,10 @@
 {
   "name": "rawobject",
   "version": "1.0.0",
-  "description": "Compress/decompress object type value to/from raw Buffer",
+  "description": "Convert Object type value to/from raw Buffer",
   "author": "@hrimthurs",
   "license": "MIT",
-  "homepage": "https://github.com/hrimthurs/RawObject",
+  "homepage": "https://github.com/hrimthurs/RawObject#readme",
   "repository": "hrimthurs/RawObject",
   "keywords": [
     "object",
