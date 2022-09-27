@@ -17,6 +17,7 @@
   "module": "./src/index.js",
   "scripts": {
     "run_example": "node ./examples/example.js",
+    "version": "npm view @hrimthurs/rawobject version",
     "pub": "npm publish --access public"
   },
   "dependencies": {
