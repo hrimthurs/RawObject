@@ -1,0 +1,25 @@
+{
+  "name": "rawobject",
+  "version": "1.0.0",
+  "description": "Compress/decompress object type value to/from raw Buffer",
+  "author": "@hrimthurs",
+  "license": "MIT",
+  "homepage": "https://github.com/hrimthurs/RawObject",
+  "repository": "hrimthurs/RawObject",
+  "keywords": [
+    "object",
+    "compress",
+    "buffer",
+    "raw"
+  ],
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "scripts": {
+    "run_example": "node ./examples/example.js",
+    "pub": "npm publish"
+  },
+  "dependencies": {
+    "@hrimthurs/tackle": "^1.1.8"
+  }
+}
