@@ -1,11 +1,11 @@
 {
-  "name": "rawobject",
-  "version": "1.0.0",
+  "name": "@hrimthurs/rawobject",
+  "version": "1.0.1",
   "description": "Convert Object type value to/from raw Buffer",
   "author": "@hrimthurs",
   "license": "MIT",
-  "homepage": "https://github.com/hrimthurs/RawObject#readme",
   "repository": "hrimthurs/RawObject",
+  "homepage": "https://github.com/hrimthurs/RawObject#readme",
   "keywords": [
     "object",
     "compress",
@@ -17,7 +17,7 @@
   "module": "./src/index.js",
   "scripts": {
     "run_example": "node ./examples/example.js",
-    "pub": "npm publish"
+    "pub": "npm publish --access public"
   },
   "dependencies": {
     "@hrimthurs/tackle": "^1.1.8"
