@@ -47,8 +47,6 @@ Options:
 }
 ~~~
 
-> It is possible to create an Object only from the Buffer obtained by the `RawObject` methods
-
 ## Usage
 
 Make Buffer from Object:
@@ -63,9 +61,11 @@ Make Object from Buffer:
 let obj = RawObject.fromBuffer(raw)
 ~~~
 
+> It is possible to create an Object only from the Buffer obtained by the `RawObject` methods
+
 More usage examples can be found [here](./examples/example.js)
 
 ## Bugs and Issues
 
 If you encounter any bugs or issues, feel free to open an issue at
-[github](https://github.com/...).
+[github](https://github.com/hrimthurs/RawObject).
