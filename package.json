@@ -1,6 +1,6 @@
 {
   "name": "@hrimthurs/rawobject",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert Object type value to/from raw Buffer",
   "author": "@hrimthurs",
   "license": "MIT",
@@ -12,15 +12,13 @@
     "buffer",
     "raw"
   ],
-  "type": "module",
   "main": "./src/index.js",
-  "module": "./src/index.js",
   "scripts": {
-    "run_example": "node ./examples/example.js",
+    "run:example": "node ./examples/example.js",
     "version": "npm view @hrimthurs/rawobject version",
     "pub": "npm publish --access public"
   },
   "dependencies": {
-    "@hrimthurs/tackle": "^1.1.8"
+    "@hrimthurs/tackle": "^1.1.10"
   }
 }

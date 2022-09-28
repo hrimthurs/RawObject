@@ -1,17 +1,14 @@
-﻿import fs from 'node:fs'
+﻿const fs = require('fs')
+const path = require('path')
 
-import { fileURLToPath } from 'node:url'
-import path from 'node:path'
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const RawObject = require('../src/index.js')
 
-import RawObject from '../src/index.js'
 
 // Native parse src data
 const fileNameSrc = path.join(__dirname, './testSrc.json')
 let time1 = Date.now()
 let srcObj = JSON.parse(fs.readFileSync(fileNameSrc).toString())
 outMeasure('Source file:', fileNameSrc, time1)
-
 
 
 // Object to raw without compress + without trunc float

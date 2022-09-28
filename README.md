@@ -1,7 +1,8 @@
 # RawObject
 
-[![info badge](https://img.shields.io/npm/dt/@hrimthurs/rawobject.svg)](http://npm-stat.com/charts.html?package=@hrimthurs/rawobject)
 [![npm](https://img.shields.io/npm/v/@hrimthurs/rawobject.svg)](https://npmjs.com/@hrimthurs/rawobject)
+[![info badge](https://img.shields.io/npm/dt/@hrimthurs/rawobject.svg)](http://npm-stat.com/charts.html?package=@hrimthurs/rawobject)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/@hrimthurs/rawobject.svg)](https://img.shields.io/bundlephobia/min/@hrimthurs/rawobject)
 
 Convert Object type value to/from raw Buffer
 
@@ -9,36 +10,49 @@ Convert Object type value to/from raw Buffer
 
 ## Installation
 
+You can use this package on the server side as well as the client side.
+
 ### [Node.js](http://nodejs.org/):
 
 ~~~
-npm install rawobject
+npm install @hrimthurs/rawobject
 ~~~
 
+## Connection
+
+### ESM:
+
 ~~~ javascript
-import RawObject from 'rawobject'
-import { ObjectToBuffer, ObjectFromBuffer } from 'rawobject'
+import RawObject from '@hrimthurs/rawobject'
+import { ObjectToBuffer, ObjectFromBuffer } from '@hrimthurs/rawobject'
+~~~
+
+### CommonJS:
+
+~~~ javascript
+const RawObject = require('@hrimthurs/rawobject')
+const { ObjectToBuffer, ObjectFromBuffer } = require('@hrimthurs/rawobject')
 ~~~
 
 ## API
 
 Make raw Buffer from javascript Object:
 
-~~~ javascript
-RawObject.toBuffer(srcObject: Object, [options: Object]): Buffer
-ObjectToBuffer(srcObject: Object, [options: Object]): Buffer
+~~~ typescript
+RawObject.toBuffer(src: Object, options?: Object): Buffer
+ObjectToBuffer(src: Object, options?: Object): Buffer
 ~~~
 
 Make javascript Object from raw Buffer:
 
-~~~ javascript
+~~~ typescript
 RawObject.fromBuffer(buffer: Buffer): Object
 ObjectFromBuffer(buffer: Buffer): Object
 ~~~
 
 Options:
 
-~~~ javascript
+~~~ typescript
 {
     floatDigits: Number,          // - how many decimal places to leave in float numbers (default: 0 - no trunc float)
     skipKeys: String | String[],  // - skip object keys (default: [] - no skip keys)

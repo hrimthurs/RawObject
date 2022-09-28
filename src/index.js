@@ -1,6 +1,6 @@
-﻿import zlib from 'node:zlib'
-import { Buffer } from 'node:buffer'
-import { TkArray } from '@hrimthurs/tackle'
+﻿const zlib = require('zlib')
+const { Buffer } = require('buffer')
+const { TkArray } = require('@hrimthurs/tackle')
 
 const SIGN_RAW_CHUNK = '#RAW'
 const LEVEL_COMPRESS = zlib.constants.Z_BEST_COMPRESSION
@@ -27,15 +27,7 @@ const TYPES_CHUNKS = {
     'Double':       { id: 29, size: 8 }
 }
 
-export function ObjectToBuffer(srcObj, inOptions) {
-    return RawObject.toBuffer(srcObj, inOptions)
-}
-
-export function ObjectFromBuffer(srcBuffer) {
-    return RawObject.fromBuffer(srcBuffer)
-}
-
-export default class RawObject {
+class RawObject {
 
     static toBuffer(srcObj, inOptions) {
         let options = {
@@ -241,3 +233,7 @@ export default class RawObject {
     }
 
 }
+
+module.exports = RawObject
+module.exports.ObjectToBuffer = RawObject.toBuffer
+module.exports.ObjectFromBuffer = RawObject.fromBuffer
