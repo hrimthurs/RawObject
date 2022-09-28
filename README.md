@@ -24,29 +24,45 @@ npm install @hrimthurs/rawobject
 
 ~~~ javascript
 import RawObject from '@hrimthurs/rawobject'
-import { ObjectToBuffer, ObjectFromBuffer } from '@hrimthurs/rawobject'
+import { toBuffer, fromBuffer } from '@hrimthurs/rawobject'
 ~~~
 
 ### CommonJS:
 
 ~~~ javascript
 const RawObject = require('@hrimthurs/rawobject')
-const { ObjectToBuffer, ObjectFromBuffer } = require('@hrimthurs/rawobject')
+const { toBuffer, fromBuffer } = require('@hrimthurs/rawobject')
 ~~~
 
 ### HTML tag \<script\>:
 
-* Download lib [RawObject.js](https://github.com/hrimthurs/RawObject/blob/master/dist/RawObject.js)
+* Connection full [RawObject.js](https://github.com/hrimthurs/RawObject/blob/master/dist/RawObject.js):
 
-~~~ html
-<!-- connection -->
-<script src="RawObject.js"></script>
+    ~~~ html
+    <script src="RawObject.js"></>
+    <script>
+        RawObject.toBuffer(obj, options)
+        RawObject.fromBuffer(buffer)
+    </script>
+    ~~~
 
-<!-- use -->
-<script>
-    RawObject.toBuffer(src)
-</script>
-~~~
+* Connection part convert object to buffer [ObjectToBuffer.js](https://github.com/hrimthurs/RawObject/blob/master/dist/ObjectToBuffer.js):
+
+    ~~~ html
+    <script src="ObjectToBuffer.js"></>
+    <script>
+        ObjectToBuffer(obj, options)
+    </script>
+    ~~~
+
+* Connection part convert buffer to object [ObjectFromBuffer.js](https://github.com/hrimthurs/RawObject/blob/master/dist/ObjectFromBuffer.js):
+
+    ~~~ html
+    <script src="ObjectFromBuffer.js"></>
+    <script>
+        ObjectFromBuffer(buffer)
+    </script>
+    ~~~
 
 ## API
 

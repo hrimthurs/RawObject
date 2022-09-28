@@ -2,6 +2,7 @@
 const path = require('path')
 
 const RawObject = require('../src/index.js')
+const { toBuffer, fromBuffer } = require('../src/index.js')
 
 
 // Native parse src data
@@ -13,11 +14,11 @@ outMeasure('Source file:', fileNameSrc, time1)
 
 // Object to raw without compress + without trunc float
 const fileNameNoCompress = path.join(__dirname, './1-1.raw')
-let data2 = RawObject.toBuffer(srcObj, { compress: false })
+let data2 = toBuffer(srcObj, { compress: false })
 fs.writeFileSync(fileNameNoCompress, data2)
 
 let time2 = Date.now()
-let obj2 = RawObject.fromBuffer(fs.readFileSync(fileNameNoCompress))
+let obj2 = fromBuffer(fs.readFileSync(fileNameNoCompress))
 outMeasure('RawObject [ compress- | trunc- ]:', fileNameNoCompress, time2, srcObj, obj2)
 
 

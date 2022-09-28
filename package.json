@@ -1,6 +1,6 @@
 {
   "name": "@hrimthurs/rawobject",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Convert Object type value to/from raw Buffer",
   "author": "@hrimthurs",
   "license": "MIT",
@@ -15,7 +15,7 @@
   "main": "./src/index.js",
   "scripts": {
     "run:example": "node ./examples/example.js",
-    "build:dist": "webpack --env build_prod --env name=RawObject",
+    "build:dist": "webpack --env build_prod --env name=RawObject && webpack --env build_prod --env name=ObjectToBuffer --env part=ObjectToBuffer.js && webpack --env build_prod --env name=ObjectFromBuffer --env part=ObjectFromBuffer.js",
     "version": "npm view @hrimthurs/rawobject version",
     "pub": "npm publish --access public"
   },

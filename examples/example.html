@@ -1,15 +1,29 @@
 <html>
     <body>
 
+        <!-- V1 -->
         <script src="../dist/RawObject.js"></script>
         <script>
-            const src = { a: [1, 2, 3] }
+            const src1 = { a: [1, 2, 3] }
 
-            let raw = RawObject.toBuffer(src)
-            console.log(raw)
+            let raw1 = RawObject.toBuffer(src1)
+            console.log(raw1)
 
-            let obj = RawObject.fromBuffer(raw)
-            console.log(obj)
+            let obj1 = RawObject.fromBuffer(raw1)
+            console.log(obj1)
+        </script>
+
+        <!-- V2 -->
+        <script src="../dist/ObjectFromBuffer.js"></script>
+        <script src="../dist/ObjectToBuffer.js"></script>
+        <script>
+            const src2 = { a: [1, 2, 3] }
+
+            let raw2 = ObjectToBuffer(src2)
+            console.log(raw2)
+
+            let obj2 = ObjectFromBuffer(raw2)
+            console.log(obj2)
         </script>
 
     </body>
