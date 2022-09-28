@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@hrimthurs/rawobject.svg)](https://npmjs.com/@hrimthurs/rawobject)
 [![info badge](https://img.shields.io/npm/dt/@hrimthurs/rawobject.svg)](http://npm-stat.com/charts.html?package=@hrimthurs/rawobject)
-[![npm bundle size](https://img.shields.io/bundlephobia/min/@hrimthurs/rawobject.svg)](https://img.shields.io/bundlephobia/min/@hrimthurs/rawobject)
+[![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/dist/RawObject.js?label=lib%20size)](https://github.com/hrimthurs/RawObject/blob/master/dist/RawObject.js)
 
 Convert Object type value to/from raw Buffer
 
@@ -32,6 +32,18 @@ import { ObjectToBuffer, ObjectFromBuffer } from '@hrimthurs/rawobject'
 ~~~ javascript
 const RawObject = require('@hrimthurs/rawobject')
 const { ObjectToBuffer, ObjectFromBuffer } = require('@hrimthurs/rawobject')
+~~~
+
+### HTML tag \<script\>:
+
+~~~ html
+<!-- connection -->
+<script src="https://github.com/hrimthurs/RawObject/dist/RawObject.js"></script>
+
+<!-- use -->
+<script>
+    RawObject.toBuffer(src)
+</script>
 ~~~
 
 ## API

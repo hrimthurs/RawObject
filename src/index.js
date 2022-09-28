@@ -3,7 +3,7 @@ const { Buffer } = require('buffer')
 const { TkArray } = require('@hrimthurs/tackle')
 
 const SIGN_RAW_CHUNK = '#RAW'
-const LEVEL_COMPRESS = zlib.constants.Z_BEST_COMPRESSION
+const LEVEL_COMPRESS = zlib.constants?.Z_BEST_COMPRESSION || zlib.Z_BEST_COMPRESSION
 
 const LIM_NUM_DIGITS = [8, 16, 32, 64].map(bits => ({
     bits,

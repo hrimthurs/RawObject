@@ -1,0 +1,16 @@
+<html>
+    <body>
+
+        <script src="../dist/RawObject.js"></script>
+        <script>
+            const src = { a: [1, 2, 3] }
+
+			let raw = RawObject.toBuffer(src)
+            console.log(raw)
+
+            let obj = RawObject.fromBuffer(raw)
+            console.log(obj)
+        </script>
+
+    </body>
+</html>
