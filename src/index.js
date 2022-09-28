@@ -1,9 +1,8 @@
-﻿const zlib = require('zlib')
-const { Buffer } = require('buffer')
+﻿const { inflate, deflate } = require('pako')
 const { TkArray } = require('@hrimthurs/tackle')
 
 const SIGN_RAW_CHUNK = '#RAW'
-const LEVEL_COMPRESS = zlib.constants?.Z_BEST_COMPRESSION || zlib.Z_BEST_COMPRESSION
+const LEVEL_COMPRESS = 9
 
 const LIM_NUM_DIGITS = [8, 16, 32, 64].map(bits => ({
     bits,
@@ -108,7 +107,7 @@ class RawObject {
         srcBuffer.copy(bufBody, 0, 1)
 
         let compressed = srcBuffer.readUInt8()
-        if (compressed) bufBody = zlib.inflateSync(bufBody)
+        if (compressed) bufBody = Buffer.from(inflate(bufBody))
 
         let offset = 0
 
@@ -151,7 +150,7 @@ class RawObject {
             ...arrChunks
         ])
 
-        if (compress) bufBody = zlib.deflateSync(bufBody, { level: LEVEL_COMPRESS })
+        if (compress) bufBody = Buffer.from(deflate(bufBody, { level: LEVEL_COMPRESS }))
 
         return Buffer.concat([this.#makeBufferFromNum(compress, 'UInt8'), bufBody])
     }

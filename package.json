@@ -1,6 +1,6 @@
 {
   "name": "@hrimthurs/rawobject",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Convert Object type value to/from raw Buffer",
   "author": "@hrimthurs",
   "license": "MIT",
@@ -20,7 +20,8 @@
     "pub": "npm publish --access public"
   },
   "dependencies": {
-    "@hrimthurs/tackle": "^1.1.12"
+    "@hrimthurs/tackle": "^1.1.12",
+    "pako": "^2.0.4"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.18.6",
