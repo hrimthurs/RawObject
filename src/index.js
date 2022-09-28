@@ -237,5 +237,5 @@ class RawObject {
 }
 
 module.exports = RawObject
-module.exports.ObjectToBuffer = RawObject.toBuffer
-module.exports.ObjectFromBuffer = RawObject.fromBuffer
+module.exports.ObjectToBuffer = (srcObj, inOptions) => RawObject.toBuffer(srcObj, inOptions)
+module.exports.ObjectFromBuffer = (buffer) => RawObject.fromBuffer(buffer)
