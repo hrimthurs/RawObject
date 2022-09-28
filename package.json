@@ -1,6 +1,6 @@
 {
   "name": "@hrimthurs/rawobject",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Convert Object type value to/from raw Buffer",
   "author": "@hrimthurs",
   "license": "MIT",
