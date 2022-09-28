@@ -36,9 +36,11 @@ const { ObjectToBuffer, ObjectFromBuffer } = require('@hrimthurs/rawobject')
 
 ### HTML tag \<script\>:
 
+* Download lib [RawObject.js](https://github.com/hrimthurs/RawObject/blob/master/dist/RawObject.js)
+
 ~~~ html
 <!-- connection -->
-<script src="https://github.com/hrimthurs/RawObject/dist/RawObject.js"></script>
+<script src="RawObject.js"></script>
 
 <!-- use -->
 <script>
@@ -58,8 +60,8 @@ ObjectToBuffer(src: Object, options?: Object): Buffer
 Make javascript Object from raw Buffer:
 
 ~~~ typescript
-RawObject.fromBuffer(buffer: Buffer): Object
-ObjectFromBuffer(buffer: Buffer): Object
+RawObject.fromBuffer(buffer: Buffer | ArrayBuffer): Object
+ObjectFromBuffer(buffer: Buffer | ArrayBuffer): Object
 ~~~
 
 Options:

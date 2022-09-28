@@ -79,7 +79,9 @@ class RawObject {
 
     static fromBuffer(srcBuffer) {
         let result
-        let chunks = this.#parseBody(srcBuffer)
+
+        let buffer = srcBuffer instanceof ArrayBuffer ? Buffer.from(srcBuffer) : srcBuffer
+        let chunks = this.#parseBody(buffer)
 
         if (typeof chunks[0] === 'string') {
             const reRawChunk = new RegExp(`^${SIGN_RAW_CHUNK}(\\d+)$`)
