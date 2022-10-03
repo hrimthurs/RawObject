@@ -22,7 +22,7 @@ class ObjectToBuffer {
         }
 
         let chunks = []
-        let skipKeys = TkArray.get(options.skipKeys)
+        let skipKeys = TkArray.getArray(options.skipKeys)
 
         let mainObject = JSON.stringify(srcObj, (key, val) => {
             if (!skipKeys.includes(key)) {

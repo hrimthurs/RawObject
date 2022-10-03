@@ -68,12 +68,15 @@ const cfgDev = {
     optimization: { minimize: false }
 }
 
-module.exports = env => ({
-    ...cfgBase,
+module.exports = env => {
+    const [
+        buildName = 'build',
+        srcPath = require('./package.json').main
+    ] = env.part?.split(',') || []
 
-    entry: {
-        [env.name || 'build']: path.join(__dirname, 'src', env.part || 'index.js')
-    },
-
-    ...env.build_prod ? cfgProd : (env.build_dev ? cfgDev : {})
-})
+    return {
+        ...cfgBase,
+        entry: { [buildName]: path.join(__dirname, srcPath) },
+        ...env.build_prod ? cfgProd : (env.build_dev ? cfgDev : {})
+    }
+}

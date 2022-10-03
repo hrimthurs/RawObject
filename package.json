@@ -1,6 +1,6 @@
 {
   "name": "@hrimthurs/rawobject",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Convert Object type value to/from raw Buffer",
   "author": "@hrimthurs",
   "license": "MIT",
@@ -15,12 +15,12 @@
   "main": "./src/index.js",
   "scripts": {
     "run:example": "node ./examples/example.js",
-    "build:dist": "webpack --env build_prod --env name=RawObject && webpack --env build_prod --env name=ObjectToBuffer --env part=ObjectToBuffer.js && webpack --env build_prod --env name=ObjectFromBuffer --env part=ObjectFromBuffer.js",
+    "build:dist": "webpack --env build_prod --env part=RawObject && webpack --env build_prod --env part=ObjectToBuffer,src/ObjectToBuffer.js && webpack --env build_prod --env part=ObjectFromBuffer,src/ObjectFromBuffer.js",
     "version": "npm view @hrimthurs/rawobject version",
     "pub": "npm publish --access public"
   },
   "dependencies": {
-    "@hrimthurs/tackle": "^1.1.12"
+    "@hrimthurs/tackle": "^1.2.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.18.6",

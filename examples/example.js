@@ -55,7 +55,7 @@ outMeasure('RawObject [ compress+ | trunc+ ]:', fileNameCompressTrunc, time5)
 
 function outMeasure(title, fileName, timeStart, srcObj = null, checkObj = null) {
     let outData = {
-        parseTime: Date.now() - timeStart,
+        workTime: Date.now() - timeStart,
         size: fs.statSync(fileName).size
     }
 
