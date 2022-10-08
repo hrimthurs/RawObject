@@ -72,26 +72,28 @@ const { toBuffer, fromBuffer } = require('@hrimthurs/rawobject')
 
 ## API
 
-Make raw Buffer from javascript Object:
+~~~ javascript
+• RawObject.toBuffer(src, options)
+• ObjectToBuffer(src, options)
+    /**
+     * Make raw Buffer from javascript Object
+     * @param {object} srcObj                       - source object
+     * @param {object} [options]                    - options
+     * @param {number} [options.floatDigits]        - number of decimal points of the float values (default: 0 → not change original value)
+     * @param {string|string[]} [options.skipKeys]  - exclude values of fields by skipKeys name (default: [])
+     * @param {boolean} [options.bigEndian]         - use big endian order (default: true)
+     * @param {boolean} [options.checkGain]         - check gain size of transform num arrays (default: true)
+     * @param {boolean} [options.compress]          - use zip-compression (default: true)
+     * @return {Buffer}
+     */
 
-~~~ typescript
-RawObject.toBuffer(src: object, options?: object): Buffer
-ObjectToBuffer(src: object, options?: object): Buffer
-
-options: {
-    floatDigits: number,        // - how many decimal places to leave in float numbers (default: 0 - no trunc float)
-    skipKeys: string|string[],  // - skip object keys (default: [] - no skip keys)
-    bigEndian: boolean,         // - use big endian order for raw numbers (default: true)
-    checkGain: boolean,         // - check gain size for numbers arrays (default: true)
-    compress: boolean           // - use zip-compression (default: true)
-}
-~~~
-
-Make javascript Object from raw Buffer:
-
-~~~ typescript
-RawObject.fromBuffer(buffer: Buffer|ArrayBuffer): object
-ObjectFromBuffer(buffer: Buffer|ArrayBuffer): object
+• RawObject.fromBuffer(buffer)
+• ObjectFromBuffer(buffer)
+    /**
+     * Make javascript Object from raw Buffer
+     * @param {Buffer|ArrayBuffer} buffer           - source buffer
+     * @return {object}
+     */
 ~~~
 
 ## Usage

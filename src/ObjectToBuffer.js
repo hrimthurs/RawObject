@@ -11,33 +11,33 @@ const LIM_NUM_DIGITS =  [8, 16, 32, 64].map(bits => ({
 
 class ObjectToBuffer {
 
-    static writeObject(srcObj, inOptions) {
-        let options = {
+    static writeObject(srcObj, options) {
+        let useOptions = {
             floatDigits: 0,
             skipKeys: [],
             bigEndian: true,
             checkGain: true,
             compress: true,
-            ...inOptions
+            ...options
         }
 
         let chunks = []
-        let skipKeys = TkArray.getArray(options.skipKeys)
+        let skipKeys = TkArray.getArray(useOptions.skipKeys)
 
         let mainObject = JSON.stringify(srcObj, (key, val) => {
             if (!skipKeys.includes(key)) {
 
                 switch (typeof val) {
                     case 'number':
-                        if (options.floatDigits) val = Number(val.toFixed(options.floatDigits))
+                        if (useOptions.floatDigits) val = Number(val.toFixed(useOptions.floatDigits))
                         break
 
                     case 'object':
                         if (Array.isArray(val) && (val.length > 0)) {
 
-                            let nameUnityType = this.#detectArrNumUnityType(val, options.floatDigits)
-                            if (nameUnityType && (!options.checkGain || this.#isGainSize(val, nameUnityType))) {
-                                let chunk = this.#makeChunkFromNumArray(val, nameUnityType, options.bigEndian)
+                            let nameUnityType = this.#detectArrNumUnityType(val, useOptions.floatDigits)
+                            if (nameUnityType && (!useOptions.checkGain || this.#isGainSize(val, nameUnityType))) {
+                                let chunk = this.#makeChunkFromNumArray(val, nameUnityType, useOptions.bigEndian)
                                 chunks.push(chunk)
                                 val = environ.SIGN_RAW_CHUNK + chunks.length
                             }
@@ -56,7 +56,7 @@ class ObjectToBuffer {
 
         chunks.unshift(mainChunk)
 
-        return this.#makeBody(chunks, options.compress, options.bigEndian)
+        return this.#makeBody(chunks, useOptions.compress, useOptions.bigEndian)
     }
 
     static #makeBody(arrChunks, compress, bigEndian) {
@@ -135,4 +135,4 @@ class ObjectToBuffer {
 
 }
 
-module.exports = (srcObj, inOptions) => ObjectToBuffer.writeObject(srcObj, inOptions)
+module.exports = (srcObj, options) => ObjectToBuffer.writeObject(srcObj, options)
