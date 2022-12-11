@@ -2,20 +2,23 @@
     <body>
 
         <!-- V1 -->
-        <script src="../dist/RawObject.js"></script>
+        <script src="../build/RawObject.min.js"></script>
+        <!-- <script src="../build/RawObject.min.legacy.js"></script> -->
         <script>
             const src1 = { a: [1, 2, 3] }
 
-            let raw1 = RawObject.toBuffer(src1)
+            let raw1 = RawObject.ObjectToBuffer(src1)
             console.log(raw1)
 
-            let obj1 = RawObject.fromBuffer(raw1)
+            let obj1 = RawObject.ObjectFromBuffer(raw1)
             console.log(obj1)
         </script>
 
         <!-- V2 -->
-        <script src="../dist/ObjectFromBuffer.js"></script>
-        <script src="../dist/ObjectToBuffer.js"></script>
+        <script src="../build/ObjectToBuffer.min.js"></script>
+        <script src="../build/ObjectFromBuffer.min.js"></script>
+        <!-- <script src="../build/ObjectToBuffer.min.legacy.js"></script>
+        <script src="../build/ObjectFromBuffer.min.legacy.js"></script> -->
         <script>
             const src2 = { a: [1, 2, 3] }
 

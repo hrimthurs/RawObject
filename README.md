@@ -24,36 +24,40 @@ npm install @hrimthurs/rawobject
 
 ~~~ javascript
 import RawObject from '@hrimthurs/rawobject'
-import { toBuffer, fromBuffer } from '@hrimthurs/rawobject'
+import { ObjectToBuffer, ObjectFromBuffer } from '@hrimthurs/rawobject'
 ~~~
 
 ### CommonJS:
 
 ~~~ javascript
 const RawObject = require('@hrimthurs/rawobject')
-const { toBuffer, fromBuffer } = require('@hrimthurs/rawobject')
+const { ObjectToBuffer, ObjectFromBuffer } = require('@hrimthurs/rawobject')
 ~~~
 
 ### HTML tag \<script\>:
 
 * Connection full:
 
-    [![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/dist/RawObject.js?label=RawObject.js)](https://github.com/hrimthurs/RawObject/blob/master/dist/RawObject.js)
+    [![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/build/RawObject.min.js?label=RawObject.min.js)](https://github.com/hrimthurs/RawObject/blob/master/build/RawObject.min.js)
+    [![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/build/RawObject.min.legacy.js?label=RawObject.min.legacy.js)](https://github.com/hrimthurs/RawObject/blob/master/build/RawObject.min.legacy.js)
 
     ~~~ html
-    <script src="RawObject.js"></>
+    <script src="RawObject.min.js"></>
+    <!-- OR TRANSPILED: <script src="RawObject.min.legacy.js"></> -->
     <script>
-        RawObject.toBuffer(obj, options)
-        RawObject.fromBuffer(buffer)
+        RawObject.ObjectToBuffer(obj, options)
+        RawObject.ObjectFromBuffer(buffer)
     </script>
     ~~~
 
 * Connection part convert object to buffer:
 
-    [![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/dist/ObjectToBuffer.js?label=ObjectToBuffer.js)](https://github.com/hrimthurs/RawObject/blob/master/dist/ObjectToBuffer.js)
+    [![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/build/ObjectToBuffer.min.js?label=ObjectToBuffer.min.js)](https://github.com/hrimthurs/RawObject/blob/master/build/ObjectToBuffer.min.js)
+    [![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/build/ObjectToBuffer.min.legacy.js?label=ObjectToBuffer.min.legacy.js)](https://github.com/hrimthurs/RawObject/blob/master/build/ObjectToBuffer.min.legacy.js)
 
     ~~~ html
-    <script src="ObjectToBuffer.js"></>
+    <script src="ObjectToBuffer.min.js"></>
+    <!-- OR TRANSPILED: <script src="ObjectToBuffer.min.js"></> -->
     <script>
         ObjectToBuffer(obj, options)
     </script>
@@ -61,10 +65,12 @@ const { toBuffer, fromBuffer } = require('@hrimthurs/rawobject')
 
 * Connection part convert buffer to object:
 
-    [![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/dist/ObjectFromBuffer.js?label=ObjectFromBuffer.js)](https://github.com/hrimthurs/RawObject/blob/master/dist/ObjectFromBuffer.js)
+    [![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/build/ObjectFromBuffer.min.js?label=ObjectFromBuffer.min.js)](https://github.com/hrimthurs/RawObject/blob/master/build/ObjectFromBuffer.min.js)
+    [![GitHub file size in bytes](https://img.shields.io/github/size/hrimthurs/RawObject/build/ObjectFromBuffer.min.legacy.js?label=ObjectFromBuffer.min.legacy.js)](https://github.com/hrimthurs/RawObject/blob/master/build/ObjectFromBuffer.min.legacy.js)
 
     ~~~ html
-    <script src="ObjectFromBuffer.js"></>
+    <script src="ObjectFromBuffer.min.js"></>
+    <!-- OR TRANSPILED: <script src="ObjectFromBuffer.min.legacy.js"></> -->
     <script>
         ObjectFromBuffer(buffer)
     </script>
@@ -73,7 +79,7 @@ const { toBuffer, fromBuffer } = require('@hrimthurs/rawobject')
 ## API
 
 ~~~ javascript
-• RawObject.toBuffer(src, options)
+• RawObject.ObjectToBuffer(src, options)
 • ObjectToBuffer(src, options)
     /**
      * Make raw Buffer from javascript Object
@@ -87,11 +93,11 @@ const { toBuffer, fromBuffer } = require('@hrimthurs/rawobject')
      * @return {Buffer}
      */
 
-• RawObject.fromBuffer(buffer)
-• ObjectFromBuffer(buffer)
+• RawObject.ObjectFromBuffer(srcBuffer)
+• ObjectFromBuffer(srcBuffer)
     /**
      * Make javascript Object from raw Buffer
-     * @param {Buffer|ArrayBuffer} buffer           - source buffer
+     * @param {Buffer|ArrayBuffer} srcBuffer        - source buffer
      * @return {object}
      */
 ~~~
@@ -101,13 +107,13 @@ const { toBuffer, fromBuffer } = require('@hrimthurs/rawobject')
 Make Buffer from Object:
 
 ~~~ javascript
-let raw = RawObject.toBuffer(obj, { compress: true, floatDigits: 6 })
+let raw = RawObject.ObjectToBuffer(obj, { compress: true, floatDigits: 6 })
 ~~~
 
 Make Object from Buffer:
 
 ~~~ javascript
-let obj = RawObject.fromBuffer(raw)
+let obj = RawObject.ObjectFromBuffer(raw)
 ~~~
 
 > It is possible to create an Object only from the Buffer obtained by the `RawObject` methods

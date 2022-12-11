@@ -1,4 +1,12 @@
-const TYPES_CHUNKS = {
+export const LEVEL_COMPRESS = 9
+export const SIGN_RAW_CHUNK = '#RAW'
+
+export const LIM_NUM_DIGITS = [8, 16, 32, 64].map(bits => ({
+    bits,
+    lim: Math.pow(2, bits)
+}))
+
+export const TYPES_CHUNKS = {
     'Object':       { id: 10 },
 
     'Int8':         { id: 20, size: 1 },
@@ -15,12 +23,7 @@ const TYPES_CHUNKS = {
     'Double':       { id: 29, size: 8 }
 }
 
-module.exports = {
-    SIGN_RAW_CHUNK: '#RAW',
-    TYPES_CHUNKS
-}
-
-module.exports.getBufMethodByNumType = (prefix, typeName, bigEndian) => {
+export function getBufMethodByNumType(prefix, typeName, bigEndian) {
     let endian = TYPES_CHUNKS[typeName].size > 1 ? bigEndian ? 'BE' : 'LE' : ''
     return prefix + typeName + endian
 }
